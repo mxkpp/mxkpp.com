@@ -1,7 +1,10 @@
-/_site
-/.jekyll-cache
+/Jekyll-source/_site
+/Jekyll-source/.jekyll-cache
 
 .code
+
+__pycache__
+*.pyc
 
 *.swp
 *.~
