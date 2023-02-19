@@ -1,0 +1,18 @@
+version: '3'
+services:
+  jekyll:
+    container_name: jekyll
+    build:
+      context: .
+    ports:
+        - 4000:4000
+    volumes:
+        - ./Jekyll-source:/Jekyll-source
+    networks:
+      - site-net
+    working_dir: /Jekyll-source
+    command: jekyll serve
+
+networks:
+  site-net:
+    driver: bridge
