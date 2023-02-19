@@ -1,17 +1,30 @@
 version: '3'
 services:
+
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    restart: unless-stopped
+    volumes:
+      - ./nginx-conf/:/etc/nginx/conf.d
+      - ./nginx-log:/var/log/nginx
+      - ./_site:/var/www/mxkpp.com/_site
+    ports:
+      - 80:80
+    networks:
+      - site-net
+
   jekyll:
     container_name: jekyll
     build:
       context: .
-    ports:
-        - 4000:4000
     volumes:
-        - ./Jekyll-source:/Jekyll-source
+        - ./Jekyll-source:/app/Jekyll-source
+        - ./_site:/app/_site
     networks:
       - site-net
-    working_dir: /Jekyll-source
-    command: jekyll serve
+    working_dir: /app/Jekyll-source
+    command: jekyll build -d /app/_site
 
 networks:
   site-net:

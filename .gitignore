@@ -1,5 +1,7 @@
 /Jekyll-source/_site
 /Jekyll-source/.jekyll-cache
+/_site
+/nginx-log
 
 .code
 
