@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 gem "jekyll", "4.2.2"
-gem "minima", "2.5.1"
+# latest as of 2/19/2023 to get alternate skins
+gem "minima", :github => 'jekyll/minima', :ref => '8bdb4694de5d06e733c130d84961f7adb26bec17'
 gem "jekyll-seo-tag", "2.8.0"
 gem "webrick", "1.8.1"

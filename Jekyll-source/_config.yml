@@ -1,14 +1,18 @@
 title: mxkpp
-description: >- # this means to ignore newlines until "baseurl:"
-  Automata. Flood risk. Misc dev.
+description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mxkpp.com"
-github_username: mxkpp
-author: Max Kipp
+author:
+  name: Max Kipp
+  email: hello@mxkpp.com
 copyright: "Max Kipp"
 
 # Build settings
 theme: minima
+minima:
+  skin: dark
+  social_links:
+    - { platform: github,  user_url: "https://github.com/mxkpp" }
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

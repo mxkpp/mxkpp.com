@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/jekyll/minima.git
+  revision: 8bdb4694de5d06e733c130d84961f7adb26bec17
+  ref: 8bdb4694de5d06e733c130d84961f7adb26bec17
+  specs:
+    minima (2.5.1)
+      jekyll (>= 3.5, < 5.0)
+      jekyll-feed (~> 0.9)
+      jekyll-seo-tag (~> 2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,10 +56,6 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    minima (2.5.1)
-      jekyll (>= 3.5, < 5.0)
-      jekyll-feed (~> 0.9)
-      jekyll-seo-tag (~> 2.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (5.0.1)
@@ -72,7 +78,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (= 4.2.2)
   jekyll-seo-tag (= 2.8.0)
-  minima (= 2.5.1)
+  minima!
   webrick (= 1.8.1)
 
 BUNDLED WITH
