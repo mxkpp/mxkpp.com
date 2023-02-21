@@ -6,7 +6,7 @@ services:
     image: nginx:latest
     restart: unless-stopped
     volumes:
-      - ./nginx-conf/:/etc/nginx/conf.d
+      - ./swag/config/nginx/site-confs/default.conf.local:/etc/nginx/conf.d/default.conf
       - ./nginx-log:/var/log/nginx
       - ./_site:/var/www/mxkpp.com/_site
     ports:
