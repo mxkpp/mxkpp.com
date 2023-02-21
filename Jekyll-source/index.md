@@ -7,4 +7,5 @@
 #
 layout: home
 ---
+
 Welcome! One day this will be my hobby site, but life has been busy! So while I'm reserving the domain, here's a placeholder page.
