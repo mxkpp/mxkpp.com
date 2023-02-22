@@ -4,25 +4,27 @@
   <div class="wrapper">
 
     <div class="footer-col-wrapper">
-
-      <div class="footer-col footer-col-1">
-        {%- if site.copyright -%}
-        <p>&copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}</p>
-        {%- endif -%}
+      <div class="footer-col">
+      {%- if site.author %}
+        <ul class="contact-list">
+          {% if site.author.name -%}
+            <li class="p-copyright">&copy; {{ site.author.name | escape }} 2021-{{ 'now' | date: "%Y" }}</li>
+          {% endif -%}
+          {% if site.author.email -%}
+            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+          {%- endif %}
+        </ul>
+      {%- endif %}
       </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
+      <div class="footer-col">
+        <p>{{ site.description | escape }}</p>
       </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
-
     </div>
-  
-  <p class="footer-disclaimer" style="color:gray; font-size:85%; font-style:italic">Opinions expressed and implied are solely my own.</p>
-  
-  </div>
 
+    <div class="social-links">
+      {%- include social.html -%}
+    </div>
+
+  </div>
+  
 </footer>

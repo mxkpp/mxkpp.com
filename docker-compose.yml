@@ -1,0 +1,39 @@
+version: '3'
+services:
+
+  swag:
+    image: lscr.io/linuxserver/swag
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - URL=mxkpp.com
+      - SUBDOMAINS=www,
+      - VALIDATION=http
+      - ONLY_SUBDOMAINS=false
+    volumes:
+      - ./swag:/config  # to persist certs, etc
+      - ./www:/config/www:ro
+    ports:
+      - 443:443
+      - 80:80
+    restart: unless-stopped
+
+  jekyll:
+    container_name: jekyll
+    build:
+      context: .
+    volumes:
+        - ./Jekyll-source:/app/Jekyll-source
+        - ./www:/app/www
+    networks:
+      - site-net
+    working_dir: /app/Jekyll-source
+    command: jekyll build -d /app/www
+
+networks:
+  site-net:
+    driver: bridge
