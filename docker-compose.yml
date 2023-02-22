@@ -13,7 +13,6 @@ services:
       - URL=mxkpp.com
       - SUBDOMAINS=www,
       - VALIDATION=http
-      - EMAIL=code@mxkpp.com
       - ONLY_SUBDOMAINS=false
     volumes:
       - ./swag:/config  # to persist certs, etc
