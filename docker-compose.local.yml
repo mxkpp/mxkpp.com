@@ -6,9 +6,8 @@ services:
     image: nginx:latest
     restart: unless-stopped
     volumes:
-      - ./swag/config/nginx/site-confs/default.conf.local:/etc/nginx/conf.d/default.conf
-      - ./nginx-log:/var/log/nginx
-      - ./_site:/var/www/mxkpp.com/_site
+      - ./nginx-conf/local/default.conf:/etc/nginx/conf.d/default.conf
+      - ./www:/var/www:ro
     ports:
       - 80:80
     networks:
@@ -20,11 +19,11 @@ services:
       context: .
     volumes:
         - ./Jekyll-source:/app/Jekyll-source
-        - ./_site:/app/_site
+        - ./www:/app/www
     networks:
       - site-net
     working_dir: /app/Jekyll-source
-    command: jekyll build -d /app/_site
+    command: jekyll build -d /app/www
 
 networks:
   site-net:

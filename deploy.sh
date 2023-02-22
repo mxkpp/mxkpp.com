@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-YML="docker-compose.local.yml"
+YML="docker-compose.yml"
 
 docker compose -f "${YML}" down
 rm -rf "www" && mkdir -m a=rwx "www"
