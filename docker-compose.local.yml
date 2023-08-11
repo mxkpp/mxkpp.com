@@ -23,7 +23,7 @@ services:
     networks:
       - site-net
     working_dir: /app/Jekyll-source
-    command: jekyll build -d /app/www
+    command: ./start.sh
 
 networks:
   site-net:
