@@ -23,16 +23,9 @@ services:
     restart: unless-stopped
 
   jekyll:
-    container_name: jekyll
-    build:
-      context: .
-    volumes:
-        - ./Jekyll-source:/app/Jekyll-source
-        - ./www:/app/www
-    networks:
-      - site-net
-    working_dir: /app/Jekyll-source
-    command: jekyll build -d /app/www
+    extends:
+      file: docker-compose.local.yml
+      service: jekyll
 
 networks:
   site-net:

@@ -1,5 +1,6 @@
 /swag
 /www
+/Jekyll-source/assets/images/thumbs/*.png
 
 .code
 
@@ -8,3 +9,7 @@ __pycache__
 
 *.swp
 *.~
+
+.env
+gs-creds.json
+Jekyll-source/assets/gs/
