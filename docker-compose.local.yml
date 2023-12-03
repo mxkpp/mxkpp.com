@@ -3,6 +3,7 @@ services:
 
   nginx:
     container_name: nginx
+    init: true
     image: nginx:latest
     restart: unless-stopped
     volumes:
@@ -15,13 +16,16 @@ services:
 
   jekyll:
     container_name: jekyll
+    init: true
     build:
       context: .
       dockerfile: Dockerfile.jekyll
+    env_file: ./.env
     volumes:
         - ./Jekyll-source:/app/Jekyll-source
         - ./www:/app/www
         - ./jekyll-start.sh:/app/jekyll-start.sh
+        - ./gs-creds.json:/.secrets/gs-creds.json
     networks:
       - site-net
     working_dir: /app/Jekyll-source

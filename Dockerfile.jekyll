@@ -1,6 +1,16 @@
 FROM jekyll/jekyll:4.2.2
 
+RUN apk update
+RUN apk upgrade
+
 ADD ./Jekyll-source/Gemfile /app/install/Gemfile
 ADD ./Jekyll-source/Gemfile.lock /app/install/Gemfile.lock
 RUN bundle install --gemfile=/app/install/Gemfile
 RUN apk --update add imagemagick
+
+# Install gcloud. 2023-12-2 from https://cloud.google.com/storage/docs/gsutil_install
+RUN apk --no-cache add curl
+RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-455.0.0-linux-x86_64.tar.gz
+RUN tar -xf google-cloud-cli-455.0.0-linux-x86_64.tar.gz
+RUN ./google-cloud-sdk/install.sh
+ENV PATH $PATH:/srv/jekyll/google-cloud-sdk/bin

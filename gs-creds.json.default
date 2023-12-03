@@ -1,0 +1,14 @@
+{
+    "type": "fooBar",
+    "project_id": "fooBar",
+    "private_key_id": "fooBar",
+    "private_key": "fooBar",
+    "client_email": "fooBar",
+    "client_id": "fooBar",
+    "auth_uri": "fooBar",
+    "token_uri": "fooBar",
+    "auth_provider_x509_cert_url": "fooBar",
+    "client_x509_cert_url": "fooBar",
+    "universe_domain": "fooBar"
+  }
+  
