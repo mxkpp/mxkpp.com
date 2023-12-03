@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Run from /app/Jekyll-source
+
 set -eu
 
 if ls assets/images/*.png 1> /dev/null 2>&1; then
