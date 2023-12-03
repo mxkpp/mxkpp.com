@@ -17,9 +17,9 @@ gcloud auth activate-service-account --key-file=/.secrets/gs-creds.json > /dev/n
 echo "Testing bucket prefix access"
 gsutil ls "${GS_DIR_URL}" > /dev/null
 
-echo "Downloading gcloud data (gcloud rsync 2x)"
+echo "Downloading gcloud data (gsutil rsync)"
 mkdir -p "${GS_LOCAL_PREFIX_DIR}"
-gsutil rsync "${GS_DIR_URL}" "${GS_LOCAL_PREFIX_DIR}"
+gsutil -m rsync -r "${GS_DIR_URL}" "${GS_LOCAL_PREFIX_DIR}"
 
 # set owner and perms on downloaded gcloud data
 chown -R ${GS_LOCAL_OWNER}:${GS_LOCAL_GROUP} "${GS_LOCAL_BUCKET_DIR}"
