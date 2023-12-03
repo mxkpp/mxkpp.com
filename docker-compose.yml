@@ -2,7 +2,7 @@ version: '3'
 services:
 
   swag:
-    image: lscr.io/linuxserver/swag
+    image: lscr.io/linuxserver/swag:amd64-2.7.4-ls261
     container_name: swag
     cap_add:
       - NET_ADMIN
