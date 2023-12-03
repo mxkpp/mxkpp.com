@@ -36,4 +36,5 @@ else
     echo echo "Not making thumbnails"
 fi
 
+echo "Building static website"
 jekyll build --trace -d /app/www
