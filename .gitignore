@@ -1,4 +1,5 @@
-/swag
+/swag/nginx/*
+!/swag/nginx/site-confs/
 /www
 /Jekyll-source/assets/images/thumbs/*.png
 
@@ -13,3 +14,4 @@ __pycache__
 .env
 gs-creds.json
 Jekyll-source/assets/gs/
+void/
