@@ -4,7 +4,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mxkpp.com"
 author:
   name: Max Kipp
-  email: hello@mxkpp.com
 copyright: "Max Kipp"
 
 # Build settings
